@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <!--<script src="crypto-js.js" type="text/javascript"></script>
+    <script src="hmac-sha1.js" type="text/javascript"></script>-->
+    <!--<script src="ComTools.js" type="text/javascript"></script>-->
+    <!--<script src="jquery-1.10.2.min.js" type="text/javascript"></script>-->
+
+    <script src="/hmac-sha1/crypto-js.js" type="text/javascript"></script>
+    <script src="/hmac-sha1/hmac-sha1.js" type="text/javascript"></script>
+    <script src="/Scripts/PlatForm/ComTools.js?v=$AppVersion" type="text/javascript"></script>
+    <script src="/Scripts/lib/jQuery/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+
+</body>
+</html>
+
+<script type="text/javascript">
+    $(function () {
+        debugger;
+        var userCode = getParameter("userCode");
+
+        var guid = CreateGUID();//动态字符
+        var appkey = "58a22ee6-6d26-4096-a447-02f721104646";//PB_OAuthSecret表的Id
+        var secretkey = "cd93226855ff5c7d335d8e49591e764c";//PB_OAuthSecret表的secret字段
+        var usercode = "admin";//登录帐号
+        var key = CryptoJS.HmacSHA1(appkey + usercode + guid, secretkey);//HmacSHA1加密
+        var redirect = Base64.encode("http://localhost:233/Form/EditForm/66e43884-c7e5-47ae-814d-07aae936dc74/?userCode=" + userCode + "");
+        var url = 'http://localhost:233/Account/GetOAuth/' + appkey + '/' + usercode + '/' + guid + '/' + key.toString() + "/" + redirect;
+        window.open(url, "_self");
+    });
+</script>

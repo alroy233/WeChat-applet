@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <script src="/Scripts/boot.js?v=$AppVersion" type="text/javascript"></script>
+    <script src="/Scripts/PlatForm/ComTools.js?v=$AppVersion" type="text/javascript"></script>
+    <script src="/Scripts/PlatForm/ComTools.js?v=$AppVersion" type="text/javascript"></script>
+    <script src="/Scripts/PlatForm/SingleForm.js?v=$AppVersion" type="text/javascript"></script>
+    <script src="/Scripts/plugins/echarts/echarts.js"></script>
+    <script type="text/javascript" hasvelocity="true">
+    </script>
+</head>
+    
+<body>
+    <div id="divReturn" style="width:100%;height:100%;position:absolute;"></div>
+    <script type="text/javascript">
+            $(function () {
+                var userCode = getParameter("userCode");
+                if (IsEmpty(userCode))
+                {
+                    Power.ui.info("userCode为空");
+                }
+                else
+                {
+                    $.ajax({
+                        url: "/Al/EmptyHumanPwd",
+                        data: {
+                            userCode: userCode
+                        },
+                        type: "POST",
+                        success: function (text) {
+                            var o = mini.decode(text);
+                            if (o == "1") {
+                                Power.ui.success("更新成功")
+                            }
+                            else {
+                                Power.ui.warning("未执行")
+                            }
+                            document.getElementById("divReturn").innerHTML = text;
+                        }
+                    });
+                }
+        });
+        
+
+    </script>
+</body>
+</html>

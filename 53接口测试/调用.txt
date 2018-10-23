@@ -1,0 +1,14 @@
+--Single
+http://10.2.0.53:8080/SingleLogin.html?userCode=0151
+http://10.2.0.53:8080/SingleLogin.html?humans=0151
+
+--Simple
+http://10.2.0.53:8080/SimpleLogin.htm?language=zh-CN&usercode=0151&password=
+
+http://10.2.0.53:8080/SimpleLogin.htm?&userCode=0151
+http://10.2.0.53:8080/SimpleLogin.htm?&humans=0151
+
+
+http://10.2.0.53:8080/SimpleLogin.htm?&userCode=0151&RedirectURL=Form/ValidForm/14433179-9495-4e82-ac44-4e3975c11572/edit/27d17887-fb18-4ca4-91d3-c7fbe25f2e54?WorkInfoID=7d574c7c-0efa-349c-8956-5a0ec5a02b03&WorkSequeID=6
+http://10.2.0.53:8080/SimpleLogin.htm?&userCode={{}}&RedirectURL={{}}
+

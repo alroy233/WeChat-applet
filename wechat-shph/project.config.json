@@ -1,23 +1,19 @@
 {
-	"description": "项目配置文件",
-	"packOptions": {
-		"ignore": []
-	},
+	"description": "项目配置文件。",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
-		"postcss": true,
+		"postcss": false,
 		"minified": true,
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.3.0",
+	"libVersion": "1.9.94",
 	"appid": "wx1206bdc91fdf1bac",
-	"projectname": "Default",
-	"debugOptions": {
-		"hidedInDevtools": []
-	},
-	"isGameTourist": false,
+	"projectname": "wechat-shph",
+	"scripts": {},
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -28,7 +24,11 @@
 			"list": []
 		},
 		"game": {
-			"currentL": -1,
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
 			"list": []
 		},
 		"miniprogram": {
